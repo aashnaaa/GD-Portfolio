@@ -1,0 +1,210 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Header */
+header {
+    background: #1291d5; /* Header background color */
+    color: #fff;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1000; /* Ensure it's above other content */
+    text-align: center; /* Center align header content */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+/* Navigation Bar */
+nav {
+    background: #333; /* Background color of the nav bar */
+    color: #fff;
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    text-align: center; /* Center align nav items */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center align nav items */
+    gap: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFD700; /* Highlight color */
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Highlighted Section */
+.highlighted {
+    background: #f9f9f9; /* Light background for highlighted sections */
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Headers in Sections */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0;
+}
+
+/* Gallery */
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 200px; /* Consistent width */
+    height: auto; /* Adjust height based on aspect ratio */
+    max-height: 150px; /* Ensure a max height to fit in the section */
+    object-fit: contain; /* Fit image without cropping */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Hide overflow to maintain consistent dimensions */
+    display: flex; /* Center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Fit image/video without cropping */
+}
+
+/* Ensure video scales correctly */
+.gallery-item video {
+    max-width: 100%; /* Scale video to fit within container */
+    max-height: 100%; /* Scale video to fit within container */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background: #1291d5;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    background: #f9f9f9; /* Same background as the About section */
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left; /* Center text in the contact section */
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin: 0.5rem 0;
+}
+
+#contact a {
+    color: #1291d5;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Adjust header size for smaller screens */
+    }
+
+    header h2 {
+        font-size: 1rem; /* Adjust subheader size for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .gallery-item {
+        width: 150px;
+        max-height: 100px;
+    }
+}
+
+.expanded-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.expanded-image img {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
